@@ -10,7 +10,7 @@ Ansible Role: Vector
 
 Role Variables
 --------------
-Вы можете изменить версию Vector:
+Вы можете изменить версию Vector:  
 vector_version: "0.18.0"
 
 Example Playbook
