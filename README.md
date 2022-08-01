@@ -15,8 +15,9 @@ vector_version: "0.18.0"
 
 Example Playbook
 ----------------
-
+```
 - name: Install vector
   hosts: vector
   roles:
     - ansible-role-vector
+```
