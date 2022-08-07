@@ -1,0 +1,25 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: true
+  tasks:
+  - name: Check if vector is installed
+    package_facts:
+      manager: "auto"
+  - name: Check if vector is installed
+    ansible.builtin.assert:
+      that: 
+        - "'vector' in ansible_facts.packages"
+  - name: check vector config
+    command: vector validate
+  - name: receiving return code 
+    command: echo $?
+    register: ret_code
+  - name: check vector config
+    ansible.builtin.assert:
+      that: 
+        - "ret_code.rc in [ 0 ]" 
+
+        
